@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -15,6 +16,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
@@ -33,19 +35,22 @@ import com.cloudinary.android.callback.UploadCallback;
 import com.cloudinary.utils.ObjectUtils;
 import com.squareup.picasso.Picasso;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     ProgressBar progressBar;
-    Button button;
+    Button button, buttonthree;
     TextView textView;
     Uri ImagePath;
 
+
     private static final String TAG = "Upload ###";
-    String url = "https://github.com/square/picasso/raw/master/website/static/sample.png";
+    //String url = "https://github.com/square/picasso/raw/master/website/static/sample.png";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -58,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_circular);
         button = findViewById(R.id.buttonClick);
         textView = findViewById(R.id.ResponseView);
+        buttonthree = findViewById(R.id.buttonThree);
 
 
         progressBar.setVisibility(View.GONE);
@@ -72,9 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        buttonthree.setOnClickListener((View v)->{
+            startActivity(new Intent(MainActivity.this, MainActivity3.class));
+        });
+
         Map<String, Object> options = new HashMap<>();
-        options.put("public_id", "image/my_dog");
-        options.put("tags", "animal");
+//        options.put("use_filename", "true");
+        options.put("folder", "image/");
+        options.put("tags", "animal nirapadakpal234");
 
 
         // button click and upload image to Cloudinary.com --------

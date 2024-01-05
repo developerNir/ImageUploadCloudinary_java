@@ -2,38 +2,44 @@ package com.example.testproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+
 import android.os.Bundle;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.cloudinary.Cloudinary;
+
+import com.cloudinary.utils.ObjectUtils;
+
+import java.io.IOException;
+
+import java.util.Map;
 
 public class MainActivity3 extends AppCompatActivity {
 
-    ImageView myRotate;
-    Button MyButton;
-    Animation rotateAnimation;
 
-    @SuppressLint("MissingInflatedId")
+    Button MyButton;
+
+    String publicId = "j5lwlo3y9dyjokwanyxa";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-//        myRotate = findViewById(R.id.RotateImage);
-//        MyButton = findViewById(R.id.buttonRotate);
-        rotateAnimation = AnimationUtils.loadAnimation(MainActivity3.this, R.anim.rotate_anim);
+
+        MyButton = findViewById(R.id.MyButton);
 
 
-        MyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myRotate.startAnimation(rotateAnimation);
-            }
+        MyButton.setOnClickListener(v -> {
+
+            Toast.makeText(this, "Hello My name is nirapadka", Toast.LENGTH_SHORT).show();
+
         });
 
 
     }
+
 }

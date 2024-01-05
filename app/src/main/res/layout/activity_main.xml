@@ -36,6 +36,12 @@
         android:backgroundTint="@color/bluePerymary"
         android:paddingHorizontal="20dp"
         />
+    <Button
+        android:id="@+id/buttonThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity three"
+        />
 
     <TextView
         android:id="@+id/ResponseView"

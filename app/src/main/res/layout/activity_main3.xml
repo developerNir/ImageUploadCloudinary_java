@@ -7,6 +7,12 @@
     tools:context=".MainActivity3"
     android:orientation="vertical"
     >
+    <Button
+        android:id="@+id/MyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="imageDelete"
+        />
 
 
 
