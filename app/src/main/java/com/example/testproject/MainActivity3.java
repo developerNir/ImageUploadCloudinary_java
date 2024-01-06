@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.cloudinary.utils.ObjectUtils;
 
 import java.io.IOException;
 
+import java.util.Arrays;
 import java.util.Map;
 
 public class MainActivity3 extends AppCompatActivity {
@@ -21,7 +23,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     Button MyButton;
 
-    String publicId = "j5lwlo3y9dyjokwanyxa";
+    public static String publicId;
 
 
     @Override
@@ -29,13 +31,15 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
+        // screen short disable ----------------------
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+
 
         MyButton = findViewById(R.id.MyButton);
 
-
         MyButton.setOnClickListener(v -> {
 
-            Toast.makeText(this, "Hello My name is nirapadka", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, publicId, Toast.LENGTH_SHORT).show();
 
         });
 

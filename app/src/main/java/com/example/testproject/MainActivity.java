@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     textView.setText(resultData.toString());
                     MainActivity2.myUrl = (String) resultData.get("url");
                     Log.d(TAG, "onSuccess: Response"+resultData);
-//                    String ImageUrl = (String) resultData.get("url");
+                    MainActivity3.publicId = (String) resultData.get("public_id");
                     //Toast.makeText(MainActivity.this, ImageUrl, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, MainActivity2.class));
 
